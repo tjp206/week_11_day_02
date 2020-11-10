@@ -18,14 +18,9 @@ public class Library {
         return this.library.size();
     }
 
-    public void addBook(HashMap library) {
-        this.library.add(library);
-    }
-
-    public void checkIfCapacityFull(HashMap library) {
-        if(this.capacity < this.bookCount()) {
-            this.addBook(library);
+    public void addIfCapacityNotFull(HashMap library) {
+        if(this.capacity > this.bookCount()) {
+            this.library.add(library);
         }
-        this.bookCount();
     }
 }

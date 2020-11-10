@@ -35,15 +35,20 @@ public class LibraryTest {
 
         @Test
         public void libraryHasBooks() {
-            library.addBook(book1);
+            assertEquals(0, library.bookCount());
+        }
+
+        @Test
+        public void checkBookCount() {
+            library.addIfCapacityNotFull(book1);
             assertEquals(1, library.bookCount());
         }
 
         @Test
         public void addBooksIfLessThanCapacity() {
-            library.addBook(book1);
-            library.addBook(book2);
-            library.addBook(book3);
-            assertEquals(3, library.bookCount());
+            library.addIfCapacityNotFull(book1);
+            library.addIfCapacityNotFull(book2);
+            library.addIfCapacityNotFull(book3);
+            assertEquals(2, library.bookCount());
         }
 }

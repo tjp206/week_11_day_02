@@ -29,7 +29,7 @@ public class Bus {
     }
 
     public void addPassengerIfLessThanCapacity(Person person) {
-        if(this.capacity < this.passengerCount()) {
+        if(this.capacity > this.passengerCount()) {
             this.addPassenger(person);
         }
         this.passengerCount();
